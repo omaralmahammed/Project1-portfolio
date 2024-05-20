@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+
+/* Navigation bar*/
+.navbar {
+    background-color: #f4ebd9;
+}
+
+.collapse ul {
+    padding-bottom: 2rem;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #011627;
+    font-weight: bold;
+    font-size: larger;
+    /* padding-bottom: 0px !important; */
+}
+
+.navbar .navbar-nav .nav-link:active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+    font-size: x-large;
+    color: #d98324;
+}
+
+.navbar-toggler {
+    color: #004643 !important;
+}
+
+
+
+/* Home section */
+.home {
+    background-color: #f4ebd9;
+    height: 81vh;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+/* the text in the home section */
+.text {
+    width: 40%;
+    margin-left: 8%;
+    margin-top: -10%;
+}
+
+.text p {
+    font-size: 1.4em;
+    color: #333333;
+    margin: 1rem 0 2rem 1rem;
+    ;
+}
+
+.text>h1 {
+    color: #005247;
+    font-size: 2.5em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 1rem;
+}
+
+.text h2 {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: transparent;
+    margin: 1rem;
+    -webkit-text-stroke: 1.5px white;
+    background-image: linear-gradient(#d98324, #d98324);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -556px 0;
+    animation: animateText 6s linear infinite;
+}
+
+@keyframes animateText {
+
+    0%,
+    95%,
+    100% {
+        background-position: -556px 0;
+    }
+
+    65%,
+    85% {
+        background-position: 0 0;
+    }
+}
+
+.platform a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #004643;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #d98324;
+    text-decoration: none;
+    margin: 1rem;
+}
+
+.platform a:hover {
+    background-color: #005247;
+    color: #f4ebd9;
+    border-color: #005247;
+    box-shadow: 0 0 10px #005247;
+}
+
+.cv {
+    padding: 12px 15px;
+    background-color: #004643;
+    border-radius: 40px;
+    font-size: 17px;
+    color: #f4ebd9;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px #004643;
+    transition: .5s;
+    margin: 1rem;
+}
+
+.cv:hover {
+    box-shadow: none;
+}
+
+
+/* the dynamic photo inside home section */
+
+
+.images {
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    bottom: 0;
+    right: 200px;
+}
+
+
+.images img {
+    height: 100%;
+    position: absolute;
+    left: 55%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: bottom 1s, left 1s;
+}
+
+img[alt="perosonal photo"] {
+    height: 94%;
+}
+
+.images:hover img[alt="perosonal photo"] {
+    left: 45%;
+}
+
+.images:hover img[alt="yellow circle"] {
+    bottom: 90px !important;
+}
+
+.rotat {
+    position: absolute;
+    width: 580px;
+    height: 580px;
+    background: transparent;
+    border: 1px solid #721121;
+    bottom: 10px;
+    right: -68px;
+    animation: rotat 15s linear infinite;
+}
+
+.rotat2 {
+    border: 1px solid #004643;
+    animation: rotat2 15s linear infinite;
+}
+
+@keyframes rotat {
+    to {
+        rotate: 360deg;
+    }
+
+}
+
+@keyframes rotat2 {
+    to {
+        rotate: -360deg;
+    }
+}
+
+
+@media screen and (max-width: 426px) {
+    .images {
+        width: 150px;
+        height: 200px;
+        right: 80px;
+        /* bottom: -420px; */
+    }
+
+    .rotat {
+        width: 200px;
+        height: 200px;
+        right: -30px;
+    }
+
+    .home {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .text {
+        width: auto;
+    }
+
+    .cv,
+    .platform a,
+    .text h2,
+    .text>h1,
+    .text p {
+        margin: 0;
+    }
+}
